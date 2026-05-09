@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Abdul Ghaffar — CS Student · ML × Security</title>
+<meta name="description" content="Personal site of Abdul Ghaffar — CS student at Sukkur IBA, working on ML-based threat detection and LLM security." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Kalam:wght@300;400;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>
+  // theme init must run before paint to avoid flash
+  (function () {
+    try {
+      var stored = localStorage.getItem('ag-theme');
+      var theme = stored || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+</head>
+<body class="landing">
+
+
+<div class="landing-nav">
+  <div class="landing-name">
+    <span>Abdul Ghaffar</span>
+    <button class="theme-toggle" aria-label="Toggle theme" title="Toggle theme (T)">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+  <div class="landing-nav-links">
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="education.html">Education</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
+
+<main class="landing-main">
+  <div class="landing-card">
+    <div class="landing-portrait" id="portrait">
+      <span id="portrait-fallback">AG</span>
+    </div>
+
+    <h1 class="landing-title">
+      Abdul Ghaffar <span class="handle">(abdulghaffarcs)</span>
+    </h1>
+
+    <p class="landing-tagline">
+      CS Student <span class="sep">·</span> ML Engineer <span class="sep">·</span> Aspiring AI Security Researcher
+    </p>
+
+    <p style="font-family:var(--mono);font-size:13px;color:var(--muted);margin:-18px 0 32px;max-width:520px;line-height:1.6;">
+      <span style="color:var(--phosphor);">▸ currently building:</span> ML-based threat detection · LLM red-teaming experiments · adversarial robustness
+    </p>
+
+    <div class="landing-socials">
+      <a href="https://github.com/abdulghaffarcs" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/abdulghaffarcs" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="mailto:abghaffar360@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>
+      </a>
+    </div>
+
+    <div class="landing-cta-grid">
+      <a href="projects.html" class="landing-btn">Projects</a>
+      <a href="about.html" class="landing-btn">About</a>
+      <a href="skills.html" class="landing-btn">Skills</a>
+      <a href="contact.html" class="landing-btn">Contact</a>
+    </div>
+  </div>
+</main>
+
+<div class="landing-foot">
+  <span class="blink-dot"></span> Open to opportunities · 2026 &nbsp; ·</div>
+
+<script>
+  // Portrait loader — drops to AG monogram fallback if image missing
+  (function() {
+    var portrait = document.getElementById('portrait');
+    var fallback = document.getElementById('portrait-fallback');
+    var test = new Image();
+    test.onload = function() {
+      var img = document.createElement('img');
+      img.src = test.src;
+      img.alt = 'Abdul Ghaffar';
+      portrait.innerHTML = '';
+      portrait.appendChild(img);
+    };
+    test.onerror = function() { /* keep fallback */ };
+    test.src = 'portrait.jpg';
+  })();
+</script>
+
+<div class="toast" id="toast"><span class="x">▸</span><span id="toast-msg">hi!</span></div>
+<script src="script.js"></script>
+</body>
+</html>

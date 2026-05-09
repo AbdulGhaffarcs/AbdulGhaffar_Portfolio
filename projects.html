@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Projects — Abdul Ghaffar</title>
+<meta name="description" content="Selected projects from Abdul Ghaffar — frontend, AI/ML, full-stack experiments." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Kalam:wght@300;400;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>
+  // theme init must run before paint to avoid flash
+  (function () {
+    try {
+      var stored = localStorage.getItem('ag-theme');
+      var theme = stored || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+</head>
+<body class="graph">
+<div class="topbar">
+  <div class="wrap topbar-row">
+    <div class="topbar-left">
+      <span><span class="blink"></span> &nbsp;<b style="color:var(--text-bright);">root@abdulghaffar</b><span class="k">:~$</span> uptime ok</span>
+      <span class="hide-sm"><span class="k">page:</span> projects/ · <span class="k">build:</span> v3.0</span>
+    </div>
+    <div class="topbar-right">
+      <span class="hide-sm"><span class="k">PKT</span> <span id="liveclock">--:--:--</span></span>
+      <span><span class="k">loc:</span> Sukkur · 27.7°N</span>
+    </div>
+  </div>
+</div>
+<nav class="primary">
+  <div class="wrap nav-row">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">AG</span>
+      <span>
+        abdul-ghaffar
+        <small>~/portfolio · main</small>
+      </span>
+    </a>
+    <div class="nav-links" id="navlinks">
+      <a href="about.html" class=""><span class="pre">01</span>about.md</a>
+      <a href="skills.html" class=""><span class="pre">02</span>stack.json</a>
+      <a href="projects.html" class="active"><span class="pre">03</span>projects/</a>
+      <a href="education.html" class=""><span class="pre">04</span>edu.log</a>
+      <a href="contact.html" class=""><span class="pre">05</span>contact.sh</a>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle theme" title="Toggle theme (T)">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+    <a href="contact.html" class="nav-cta">./hire-me</a>
+    <button class="nav-toggle" id="navtoggle" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="wrap">
+    <div class="page-num">— 03 —</div>
+    <div class="page-meta reveal">
+      <span class="field"><b>FILE-003</b></span>
+      <span class="field">type: <b>projects/</b></span>
+      <span class="field">count: <b>3</b></span>
+      <span class="field">focus: <b>ai security · ml</b></span>
+    </div>
+    <span class="page-tag reveal">section.03</span>
+    <h1 class="page-title reveal">Selected <em>experiments</em> <span class="hand">& shipped things.</span></h1>
+    <p class="page-lead reveal">
+      <span class="phosphor">$</span> ls -lt ~/projects | head -3<br>
+      Three projects, each pulling in the same direction. Two are <span class="phosphor">AI Security</span> work — defensive ML and safe LLM deployment. The third is the frontend foundation that made the others possible.
+    </p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="projects">
+
+      <a class="proj-card reveal" href="#" onclick="return false;">
+        <span class="proj-handnote">★ flagship</span>
+        <div class="proj-head">
+          <span class="proj-num"><span class="green">▸</span> exp_ml-sec_001</span>
+          <span class="proj-year">Mar · 2026</span>
+        </div>
+        <h3 class="proj-title">ML-powered <em>Phishing &amp; URL Threat</em> Detection</h3>
+        <div class="proj-tag">// hybrid classifier · ml + llm fallback</div>
+        <p class="proj-desc"><span class="com">/* */</span> A two-stage detection pipeline for malicious URLs. A Random Forest classifier handles the high-confidence majority of inputs; borderline cases are escalated to the Gemini API for context-aware analysis. The hybrid approach measurably reduced false positives compared to a single-model baseline.</p>
+        <p class="proj-desc"><span class="com">/* */</span> <span style="color:var(--phosphor);">Why it matters:</span> phishing remains the #1 entry point for breaches, and traditional rule-based detection misses novel patterns. ML helps; LLMs help more for the borderline 5%. Served behind a Node/Express REST API so it can plug into a real SOC workflow.</p>
+        <div class="proj-stack">
+          <span>Python</span><span>Scikit-learn</span><span>Random Forest</span><span>Gemini API</span><span>Node</span><span>Express</span>
+        </div>
+        <span class="proj-link">read writeup <span class="arrow">→</span></span>
+      </a>
+
+      <a class="proj-card reveal" href="https://github.com/AbdulGhaffarcs/Kryptos-Niarad" target="_blank" rel="noopener">
+        <span class="proj-handnote">★ ai-sec</span>
+        <div class="proj-head">
+          <span class="proj-num"><span class="green">▸</span> exp_ml-sec_002</span>
+          <span class="proj-year">2026</span>
+        </div>
+        <h3 class="proj-title">Niarad — <em>Safe LLM Deployment</em> &amp; RAG</h3>
+        <div class="proj-tag">// privacy-first rag · guardrails · multi-stage routing</div>
+        <p class="proj-desc"><span class="com">/* */</span> A document-aware AI assistant built on a full RAG stack — FAISS vector store, HuggingFace embeddings, LangChain — with an explicit safety layer in front. Topic-blocking input filter intercepts off-domain queries before they reach the LLM, multi-stage routing classifies intent (small-talk / extraction / synthesis) to minimize wasted LLM calls, and refusals are surfaced visibly in the UI as a "BLOCKED" badge.</p>
+        <p class="proj-desc"><span class="com">/* */</span> <span style="color:var(--phosphor);">Why it matters:</span> safe LLM deployment is becoming its own discipline — input validation, refusal legibility, prompt-level guardrails, on-device inference for sensitive data. Niarad is my hands-on study of those primitives, applied to a real use case (a study assistant for university documents).</p>
+        <div class="proj-stack">
+          <span>Python</span><span>LangChain</span><span>FAISS</span><span>HuggingFace</span><span>RAG</span><span>Streamlit</span><span>Guardrails</span>
+        </div>
+        <span class="proj-link">view on GitHub <span class="arrow">↗</span></span>
+      </a>
+
+      <a class="proj-card reveal" href="https://connectchat07.vercel.app/" target="_blank" rel="noopener">
+        <span class="proj-handnote red">frontend proof</span>
+        <div class="proj-head">
+          <span class="proj-num"><span class="green">▸</span> exp_003</span>
+          <span class="proj-year">Jan · 2026</span>
+        </div>
+        <h3 class="proj-title">Connect — <em>Real-time Chat</em> Application</h3>
+        <div class="proj-tag">// firebase + react · auth, firestore, security rules</div>
+        <p class="proj-desc"><span class="com">/* */</span> A real-time messaging app built end-to-end with React and Firebase. Authentication, persistent conversations, responsive UI across devices. The most interesting part wasn't the chat — it was hardening the Firestore security rules so users could only read and write their own threads.</p>
+        <p class="proj-desc"><span class="com">/* */</span> <span style="color:var(--phosphor);">Why it's here:</span> debugging Firestore permissions for two days taught me more about practical access control than any course did. That mindset — assume the client is hostile, validate everything server-side — carries directly into ML security work.</p>
+        <div class="proj-stack">
+          <span>React</span><span>Firebase Auth</span><span>Firestore</span><span>Security Rules</span>
+        </div>
+        <span class="proj-link">Website <span class="arrow">→</span></span>
+      </a>
+
+    </div>
+
+    <div style="margin-top:50px;padding:24px 28px;border:1px dashed var(--line-bold);font-family:var(--mono);font-size:13px;color:var(--muted);" class="reveal">
+      <span style="color:var(--phosphor);">▸ next up:</span> prompt injection test harness · adversarial example demo · LLM-based log analysis. <span style="color:var(--text);">Want to collaborate? <a href="contact.html" style="color:var(--phosphor);text-decoration:underline;">→ contact</a></span>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <span>© 2026 abdul-ghaffar · last commit: just now</span>
+      <span>built with <span class="heart">♥</span>, coffee &amp; vim motions</span>
+      <span>v3.0 · no template</span>
+    </div>
+    <div class="foot-secret">
+      psst — try the konami code: <kbd>↑</kbd> <kbd>↑</kbd> <kbd>↓</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd> <kbd>←</kbd> <kbd>→</kbd> <kbd>B</kbd> <kbd>A</kbd> · or press <kbd>T</kbd> to toggle theme · <kbd>~</kbd> to focus the terminal
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"><span class="x">▸</span><span id="toast-msg">hi!</span></div>
+<script src="script.js"></script>
+</body>
+</html>
