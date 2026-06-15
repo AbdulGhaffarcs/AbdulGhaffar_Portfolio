@@ -115,13 +115,13 @@ function bootTerminal() {
 
   const seq = [
     { delay: 200, html: termPrompt() + '<span class="key">whoami</span>' },
-    { delay: 350, html: '<span class="out">abdul-ghaffar — cs student / ml × security</span>' },
+    { delay: 350, html: '<span class="out">abdul-ghaffar — cs student / ai engineer / full-stack</span>' },
     { delay: 250, html: termPrompt() + '<span class="key">cat status.txt</span>' },
-    { delay: 400, html: '<span class="ok">●</span> <span class="out">focus: AI security · ML for threat detection</span>' },
-    { delay: 300, html: '<span class="ok">●</span> <span class="out">building: phishing detection (RF + Gemini hybrid)</span>' },
-    { delay: 300, html: '<span class="ok">●</span> <span class="out">learning: prompt injection · adversarial ML</span>' },
-    { delay: 300, html: '<span class="ok">●</span> <span class="out">open to: research / internships · 2026</span>' },
-    { delay: 300, html: termPrompt() + '<span class="dim">help</span> <span class="dim">— or try `security`</span>' }
+    { delay: 400, html: '<span class="ok">●</span> <span class="out">focus: applied AI engineering · RAG · agents · LLM APIs</span>' },
+    { delay: 300, html: '<span class="ok">●</span> <span class="out">building: RAG pipeline · multi-agent systems · full-stack SaaS</span>' },
+    { delay: 300, html: '<span class="ok">●</span> <span class="out">learning: agent orchestration · LLM fine-tuning · vector search</span>' },
+    { delay: 300, html: '<span class="ok">●</span> <span class="out">open to: AI engineering roles / internships · 2026</span>' },
+    { delay: 300, html: termPrompt() + '<span class="dim">help</span> <span class="dim">— or try `rag`</span>' }
   ];
   let t = 0;
   seq.forEach((line, i) => {
@@ -139,7 +139,7 @@ const COMMANDS = {
     '<span class="dim">available commands:</span>',
     '  <span class="key">whoami</span>      &nbsp;&nbsp;— who is abdul',
     '  <span class="key">about</span>       &nbsp;&nbsp;— short bio',
-    '  <span class="key">security</span>    &nbsp;— ai security focus &amp; interests',
+    '  <span class="key">rag</span>         &nbsp;&nbsp;— ai engineering focus &amp; what I\'m building',
     '  <span class="key">skills</span>      &nbsp;— technical stack',
     '  <span class="key">projects</span>    &nbsp;— list projects',
     '  <span class="key">contact</span>     &nbsp;— how to reach me',
@@ -154,43 +154,39 @@ const COMMANDS = {
     '  <span class="key">clear</span>       &nbsp;&nbsp;— clear screen',
     '  <span class="key">exit</span>        &nbsp;&nbsp;— close terminal'
   ],
-  whoami: () => ['<span class="out">abdul-ghaffar — cs student, sukkur iba · ml × security</span>'],
+  whoami: () => ['<span class="out">abdul-ghaffar — cs student, sukkur iba · ai engineer · full-stack</span>'],
   about: () => [
     '<span class="out">CS student at Sukkur IBA (2023–2027), 6th semester.</span>',
-    '<span class="out">Focus: AI security — ML for threat detection + LLM red-teaming.</span>',
+    '<span class="out">Focus: applied AI engineering — RAG pipelines, multi-agent systems, full-stack LLM products.</span>',
     '<span class="dim">→ <a href="about.html" style="color:var(--phosphor);text-decoration:underline;">read more on /about</a></span>'
   ],
   skills: () => [
-    '<span class="ok">▸ ml-sec</span>    Python · Scikit-learn · LLM integration · adversarial ML',
+    '<span class="ok">▸ ai-eng</span>    Python · LangChain · FAISS · HuggingFace · LLM APIs · RAG',
     '<span class="ok">▸ frontend</span>  React · JS ES6+ · Firebase · responsive UI',
     '<span class="ok">▸ tooling</span>   Node · Express · REST · Git · Linux',
     '<span class="dim">→ <a href="skills.html" style="color:var(--phosphor);text-decoration:underline;">full stack on /skills</a></span>'
   ],
   projects: () => [
-    '<span class="dim">selected experiments:</span>',
-    '  <span class="key">001</span> ★ ml-powered phishing/url threat detection  <span class="dim">[mar 2026]</span>',
-    '  <span class="key">002</span> ★ niarad — safe llm deployment &amp; rag      <span class="dim">[2026]</span>',
-    '  <span class="key">003</span>   connect — real-time chat (firebase)        <span class="dim">[jan 2026]</span>',
+    '<span class="dim">shipped things:</span>',
+    '  <span class="key">001</span> ★ ml + llm hybrid detection pipeline        <span class="dim">[mar 2026]</span>',
+    '  <span class="key">002</span> ★ niarad — production rag pipeline          <span class="dim">[2026]</span>',
+    '  <span class="key">003</span>   connect — real-time chat (react+firebase)  <span class="dim">[jan 2026]</span>',
     '<span class="dim">→ <a href="projects.html" style="color:var(--phosphor);text-decoration:underline;">details on /projects</a></span>'
   ],
-  security: () => [
-    '<span class="ok">▸ AI Security — what I\'m focused on</span>',
-    '',
-    '<span class="dim">currently exploring:</span>',
-    '  ▸ <span class="key">prompt injection</span> &amp; LLM jailbreaks',
-    '  ▸ <span class="key">adversarial examples</span> (FGSM, PGD, transferability)',
-    '  ▸ <span class="key">ML for malware/phishing</span> detection',
-    '  ▸ <span class="key">model robustness</span> &amp; red-teaming',
-    '  ▸ <span class="key">privacy-preserving ML</span>',
+  rag: () => [
+    '<span class="ok">▸ RAG & Applied AI Engineering — what I build</span>',
     '',
     '<span class="dim">currently building:</span>',
-    '  ▸ ML-powered phishing &amp; URL threat detection (RF + Gemini hybrid)',
-    '  ▸ Niarad — safe LLM deployment with guardrails &amp; multi-stage routing',
+    '  ▸ <span class="key">RAG pipelines</span> (FAISS · LangChain · HuggingFace embeddings)',
+    '  ▸ <span class="key">multi-agent systems</span> & LLM orchestration',
+    '  ▸ <span class="key">LLM API integration</span> (Gemini · OpenAI · routing layers)',
+    '  ▸ <span class="key">full-stack AI products</span> (React + Python backend)',
+    '  ▸ <span class="key">ML inference APIs</span> (Scikit-learn · REST)',
     '',
     '<span class="dim">next up:</span>',
-    '  ▸ prompt injection test harness',
-    '  ▸ adversarial example demo (FGSM on CIFAR-10)',
-    '  ▸ LLM-based security log analysis',
+    '  ▸ agency reporting autopilot (SaaS)',
+    '  ▸ job finder (full-stack)',
+    '  ▸ multi-agent orchestration demos',
     '',
     '<span class="dim">→ <a href="contact.html" style="color:var(--phosphor);text-decoration:underline;">collaborate? /contact</a></span>'
   ],
@@ -204,7 +200,7 @@ const COMMANDS = {
   education: () => [
     '<span class="ok">BSCS · Sukkur IBA University</span>',
     'aug 2023 → may 2027  <span class="dim">[currently 6th sem]</span>',
-    'focus: software engineering, ML, infosec',
+    'focus: software engineering, ML, AI engineering',
     '<span class="dim">→ <a href="education.html" style="color:var(--phosphor);text-decoration:underline;">/education</a></span>'
   ],
   socials: () => [
