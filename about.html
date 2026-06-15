@@ -76,9 +76,9 @@
     <span class="page-tag reveal">section.01</span>
     <h1 class="page-title reveal">A short <em>readme</em>, <span class="hand">sort of.</span></h1>
     <p class="page-lead reveal">
-      Who I am, and why I'm trying to put <span class="phosphor">machine learning</span>
-      and <span class="pen-blue">security</span> on the same desk.
-      <span class="marg">← they need each other more than people admit</span>
+      Who I am, and why I keep <span class="phosphor">shipping LLM-powered systems</span>
+      instead of just reading about them.
+      <span class="marg">← the gap between tutorial and production is where the learning happens</span>
     </p>
   </div>
 </header>
@@ -91,9 +91,9 @@
           <div class="nb-content">
             <h3>Hi, I'm <span class="red">Abdul.</span></h3>
             <p>I'm a 4th-year CS student at <span class="blue">Sukkur IBA University</span>, halfway through a degree I genuinely love.</p>
-            <p>My focus is <span class="blue">AI Security</span> — applying machine learning to threat detection, and studying how ML systems themselves can be attacked, broken, and defended.</p>
-            <p>I got here by <span class="corr">tutorials</span> <span class="arrow-note">↗ shipping things</span>. I started in frontend, picked up Python and Scikit-learn for fun, and the day I built a phishing detector with a Random Forest + Gemini hybrid was the day I found my actual interest.</p>
-            <p>Now I'm reading about <span class="blue">prompt injection, adversarial examples, and ML for SOC automation</span> — the long-term goal is research-adjacent work in this space after graduation.</p>
+            <p>My focus is <span class="blue">applied AI engineering</span> — building RAG pipelines, wiring multi-agent systems, and shipping full-stack products that actually use LLMs to do useful work.</p>
+            <p>I got here by <span class="corr">tutorials</span> <span class="arrow-note">↗ shipping things</span>. I started in frontend, picked up Python and LangChain for fun, and the day I shipped a production RAG pipeline end-to-end was the day I found my actual interest.</p>
+            <p>Now I'm focused on the gap between "it works in a notebook" and "it works in production" — retrieval quality, agent reliability, latency, and the full-stack layer that makes AI useful to real users.</p>
             <p style="margin-top:18px;">— A.G., <span style="font-family:var(--mono);font-size:13px;">2026</span></p>
           </div>
         </div>
@@ -102,29 +102,29 @@
       <div class="info-stack reveal">
         <div class="info-card">
           <div class="ic-label">Focus</div>
-          <div class="ic-value"><em>AI Security</em><br>ML × cybersecurity, the<br>intersection that matters.</div>
+          <div class="ic-value"><em>Applied AI Engineering</em><br>RAG · agents · full-stack,<br>shipped end-to-end.</div>
         </div>
         <div class="info-card eq">
-          <span class="lhs">defense</span> <span class="op">=</span> understand(attack)<br>
-          <small>// you can't secure what you can't break</small>
+          <span class="lhs">output</span> <span class="op">=</span> retrieve(context) + generate()<br>
+          <small>// RAG in one line</small>
         </div>
         <div class="info-card">
-          <div class="ic-label">Currently exploring</div>
+          <div class="ic-label">Currently building</div>
           <div class="ic-value" style="font-family:var(--mono);font-size:13px;line-height:1.7;">
-            ▸ Prompt injection / LLM jailbreaks<br>
-            ▸ Adversarial examples (FGSM, PGD)<br>
-            ▸ ML for malware &amp; phishing detection<br>
-            ▸ Model robustness &amp; red-teaming<br>
-            ▸ Privacy-preserving ML
+            ▸ RAG pipelines (FAISS · LangChain)<br>
+            ▸ Multi-agent AI systems<br>
+            ▸ LLM API integration &amp; routing<br>
+            ▸ Full-stack SaaS products<br>
+            ▸ ML inference APIs
           </div>
         </div>
         <div class="info-card">
           <div class="ic-label">Currently</div>
-          <div class="ic-value">6th semester · <em>BSCS</em><br>+ self-directed AI security study</div>
+          <div class="ic-value">6th semester · <em>BSCS</em><br>+ shipping AI products</div>
         </div>
         <div class="info-card">
           <div class="ic-label">Open to</div>
-          <div class="ic-value"><em>Internships</em>, research,<br>AI security collabs · 2026 →</div>
+          <div class="ic-value"><em>AI engineering roles</em>,<br>full-stack + LLM collabs · 2026 →</div>
         </div>
        
       </div>
@@ -136,8 +136,8 @@
         risk = P(attack) × <b>impact</b>
       </div>
       <div>
-        <span class="eqlabel">Eq. 02 — adversarial ml</span>
-        x' = x + ε · sign(∇<sub>x</sub><b>L</b>)
+        <span class="eqlabel">Eq. 02 — retrieval augmented generation</span>
+        answer = LLM(query + retrieve(<b>k</b>, index))
       </div>
       <div>
         <span class="eqlabel">Eq. 03 — learning</span>
