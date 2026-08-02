@@ -20,7 +20,6 @@
     revealEls.forEach(function (el) { io.observe(el); });
   }
 
-  // ---- Active nav link on scroll ----
  // ---- Active nav link on scroll + smooth scroll (no URL hash) ----
 
 var sections = document.querySelectorAll('section[id], header[id]');
