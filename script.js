@@ -21,24 +21,67 @@
   }
 
   // ---- Active nav link on scroll ----
-  var sections = document.querySelectorAll('section[id], header[id]');
-  var navLinks = document.querySelectorAll('.nav-links a, .nav-panel a[href^="#"]');
+ // ---- Active nav link on scroll + smooth scroll (no URL hash) ----
 
-  function setActive(id) {
-    navLinks.forEach(function (link) {
-      var match = link.getAttribute('href') === '#' + id;
-      link.classList.toggle('is-active', match);
+var sections = document.querySelectorAll('section[id], header[id]');
+var navLinks = document.querySelectorAll('.nav-links a, .nav-panel a[href^="#"]');
+
+function setActive(id) {
+  navLinks.forEach(function (link) {
+    var match = link.getAttribute('href') === '#' + id;
+    link.classList.toggle('is-active', match);
+  });
+}
+
+// Handle navigation clicks
+navLinks.forEach(function (link) {
+  link.addEventListener('click', function (e) {
+    var href = this.getAttribute('href');
+
+    if (!href || href.charAt(0) !== '#') return;
+
+    e.preventDefault();
+
+    var target = document.querySelector(href);
+
+    if (!target) return;
+
+    target.scrollIntoView({
+      behavior: prefersReduced ? 'auto' : 'smooth',
+      block: 'start'
     });
-  }
 
-  if ('IntersectionObserver' in window) {
-    var navIO = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) setActive(entry.target.id);
-      });
-    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
-    sections.forEach(function (s) { navIO.observe(s); });
-  }
+    // Remove hash from URL
+    history.replaceState(
+      null,
+      '',
+      window.location.pathname + window.location.search
+    );
+
+    setActive(target.id);
+
+    if (panel && panel.classList.contains('is-open')) {
+      closePanel();
+    }
+  });
+});
+
+if ('IntersectionObserver' in window) {
+  var navIO = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        setActive(entry.target.id);
+      }
+    });
+  }, {
+    rootMargin: '-45% 0px -50% 0px',
+    threshold: 0
+  });
+
+  sections.forEach(function (s) {
+    navIO.observe(s);
+  });
+}
 
   // ---- Mobile nav ----
   var toggle = document.getElementById('navToggle');
