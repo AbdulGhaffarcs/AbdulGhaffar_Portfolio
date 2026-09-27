@@ -5,6 +5,8 @@
    a single accent used sparingly. Set in one grotesk + one mono.
    ============================================================ */
 
+
+
 :root{
   --paper: #FAFAF8;
   --ink: #0A0A0A;
@@ -149,9 +151,11 @@ ul{ margin: 0; padding: 0; list-style: none; }
 /* ---------- Hero / masthead ---------- */
 .hero{ border-top: none; }
 .hero-inner{
+  border-bottom: 1px solid var(--ink);
+}
+.hero-grid{
   display: grid;
   grid-template-columns: 1fr 300px;
-  border-bottom: 1px solid var(--ink);
 }
 .hero-main{ padding: 64px 32px 48px; border-right: 1px solid var(--ink); }
 .hero-kicker{
@@ -363,7 +367,7 @@ footer{ border-top: 1px solid var(--ink); }
   .nav-links{ display: none; }
   .nav-actions .btn{ display: none; }
   .nav-toggle{ display: flex; }
-  .hero-inner{ grid-template-columns: 1fr; }
+  .hero-grid{ grid-template-columns: 1fr; }
   .hero-main{ border-right: none; border-bottom: 1px solid var(--ink); }
   .hero-side{ max-width: 340px; }
   .section-inner{ grid-template-columns: 1fr; }
